@@ -47,11 +47,14 @@ public class SampleConnectorServiceComponent {
                     SampleProvisioningConnectorFactory();
             context.getBundleContext().registerService(AbstractProvisioningConnectorFactory.class.getName(),
                     provisioningConnectorFactory, null);
-//            if (log.isDebugEnabled()) {
-//                log.debug("Sample Identity Provisioning Connector bundle is activated");
-//            }
+            if (log.isDebugEnabled()) {
+                log.debug("Sample Outbound Provisioning Connector bundle is activated");
+            }
         } catch (Throwable e) {
-//            log.error("Error while activating Sample Identity Provisioning Connector ", e);
+            log.error("Error while activating Sample Identity Provisioning Connector ", e);
         }
     }
 }
+
+
+
