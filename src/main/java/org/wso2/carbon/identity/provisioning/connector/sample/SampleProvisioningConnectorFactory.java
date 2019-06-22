@@ -33,12 +33,12 @@ import java.util.List;
  */
 public class SampleProvisioningConnectorFactory extends AbstractProvisioningConnectorFactory {
 
-        private static final Log log = LogFactory.getLog(SampleProvisioningConnectorFactory.class);
+    private static final Log log = LogFactory.getLog(SampleProvisioningConnectorFactory.class);
     private static final String CONNECTOR_TYPE = "Sample";
 
     @Override
-    protected AbstractOutboundProvisioningConnector buildConnector(
-            Property[] provisioningProperties) throws IdentityProvisioningException {
+    protected AbstractOutboundProvisioningConnector buildConnector(Property[] provisioningProperties) throws
+            IdentityProvisioningException {
 
         SampleProvisioningConnector connector = new SampleProvisioningConnector();
         connector.init(provisioningProperties);
@@ -56,96 +56,37 @@ public class SampleProvisioningConnectorFactory extends AbstractProvisioningConn
     @Override
     public List<Property> getConfigurationProperties() {
 
-//        Property clientId = new Property();
-//        clientId.setName(SampleConnectorConstants.OFFICE365_CLIENT_ID);
-//        clientId.setDisplayName("Client ID");
-//        clientId.setDisplayOrder(1);
-//        clientId.setRequired(true);
-//
-//        Property clientSecret = new Property();
-//        clientSecret.setName(SampleConnectorConstants.OFFICE365_CLIENT_SECRET);
-//        clientSecret.setDisplayName("Client Secret");
-//        clientSecret.setConfidential(true);
-//        clientSecret.setDisplayOrder(2);
-//        clientSecret.setRequired(true);
-//
-//        Property tenant = new Property();
-//        tenant.setName(SampleConnectorConstants.OFFICE365_TENANT);
-//        tenant.setDisplayName("Office365 Tenant Name");
-//        tenant.setDescription("Example : tenantName.onmicrosoft.com");
-//        tenant.setDisplayOrder(3);
-//        tenant.setRequired(true);
-//
-//        Property domain = new Property();
-//        domain.setName(SampleConnectorConstants.OFFICE365_DOMAIN);
-//        domain.setDisplayName("Office365 Domain Name");
-//        domain.setDisplayOrder(4);
-//        domain.setRequired(true);
-//
-//        Property immutableId = new Property();
-//        immutableId.setName(SampleConnectorConstants.OFFICE365_IMMUTABLE_ID);
-//        immutableId.setDisplayName("Immutable ID");
-//        immutableId.setDescription("A claim which will give a unique identifier to the user account in Azure AD" +
-//                " [Example : http://wso2.org/claims/userid]");
-//        immutableId.setDisplayOrder(5);
-//        immutableId.setRequired(true);
-//
-//        Property upn = new Property();
-//        upn.setName(SampleConnectorConstants.OFFICE365_UPN);
-//        upn.setDisplayName("User Principal Name");
-//        upn.setDescription("Internet-style login name ending with the domain name");
-//        upn.setDisplayOrder(6);
-//        upn.setRequired(true);
-//
-//        Property domainEnabled = new Property();
-//        domainEnabled.setName(SampleConnectorConstants.OFFICE365_ENABLE_DOMAIN);
-//        domainEnabled.setDisplayName("Append Domain Name to UPN");
-//        domainEnabled.setDescription("If enabled domain name will be appended to User Principal Name [Example: " +
-//                "upnValue@domainName]");
-//        domainEnabled.setDisplayOrder(7);
-//
-//        Property displayName = new Property();
-//        displayName.setName(SampleConnectorConstants.OFFICE365_DISPLAY_NAME);
-//        displayName.setDisplayName("Display Name");
-//        displayName.setDescription("The name to display in the address book for the user");
-//        displayName.setDisplayOrder(8);
-//        displayName.setRequired(true);
-//
-//        Property mailNickName = new Property();
-//        mailNickName.setName(SampleConnectorConstants.OFFICE365_EMAIL_NICKNAME);
-//        mailNickName.setDisplayName("Email Nickname");
-//        mailNickName.setDescription("The mail alias for the user");
-//        mailNickName.setDisplayOrder(9);
-//        mailNickName.setRequired(true);
-//
-//        Property ruleAttribute = new Property();
-//        ruleAttribute.setName(SampleConnectorConstants.OFFICE365_MEMBERSHIP_ATTRIBUTE);
-//        ruleAttribute.setDisplayName("Dynamic Membership Rule Attribute");
-//        ruleAttribute.setDisplayOrder(10);
-//        ruleAttribute.setDescription("This attribute is considered in the dynamic membership allocation rule in
-// Azure" +
-//                " AD");
-//        ruleAttribute.setRequired(false);
-//
-//        Property ruleValue = new Property();
-//        ruleValue.setName(SampleConnectorConstants.OFFICE365_MEMBERSHIP_VALUE);
-//        ruleValue.setDisplayName("Dynamic Membership Rule Value");
-//        ruleValue.setDisplayOrder(11);
-//        ruleValue.setDescription("If this is not set, 'http://wso2.org/claims/role' will be taken as default");
-//        ruleValue.setRequired(false);
+        Property clientId = new Property();
+        clientId.setName(SampleConnectorConstants.SAMPLE_CLIENT_ID);
+        clientId.setDisplayName("Client ID");
+        clientId.setDisplayOrder(1);
+        clientId.setRequired(true);
+
+        Property clientSecret = new Property();
+        clientSecret.setName(SampleConnectorConstants.SAMPLE_CLIENT_SECRET);
+        clientSecret.setDisplayName("Client Secret");
+        clientSecret.setConfidential(true);
+        clientSecret.setDisplayOrder(2);
+        clientSecret.setRequired(true);
+
+        Property username = new Property();
+        username.setName(SampleConnectorConstants.SAMPLE_USERNAME);
+        username.setDisplayName("Username");
+        username.setDescription("Username for the external system");
+        username.setDisplayOrder(3);
+        username.setRequired(true);
+
+        Property password = new Property();
+        password.setName(SampleConnectorConstants.SAMPLE_PASSWORD);
+        password.setDisplayName("Password");
+        password.setDisplayOrder(4);
+        password.setRequired(true);
 
         List<Property> properties = new ArrayList<>();
-//        properties.add(clientId);
-//        properties.add(clientSecret);
-//        properties.add(tenant);
-//        properties.add(domain);
-//        properties.add(immutableId);
-//        properties.add(upn);
-//        properties.add(domainEnabled);
-//        properties.add(displayName);
-//        properties.add(mailNickName);
-//        properties.add(ruleAttribute);
-//        properties.add(ruleValue);
+        properties.add(clientId);
+        properties.add(clientSecret);
+        properties.add(username);
+        properties.add(password);
         return properties;
     }
 }
