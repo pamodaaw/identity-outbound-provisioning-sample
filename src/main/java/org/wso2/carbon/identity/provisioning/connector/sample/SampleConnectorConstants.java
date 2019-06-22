@@ -23,10 +23,10 @@ package org.wso2.carbon.identity.provisioning.connector.sample;
  */
 public class SampleConnectorConstants {
 
-    public static final String SAMPLE_CONNECTOR_CLIENT_ID = "client_id";
-    public static final String SAMPLE_CONNECTOR_CLIENT_SECRET = "client_secret";
-    public static final String SAMPLE_CONNECTOR_USERNAME = "username";
-    public static final String SAMPLE_CONNECTOR_PASSWORD = "password";
+    public static final String SAMPLE_CLIENT_ID = "client_id";
+    public static final String SAMPLE_CLIENT_SECRET = "client_secret";
+    public static final String SAMPLE_USERNAME = "username";
+    public static final String SAMPLE_PASSWORD = "password";
 
 
     public static final String PROPERTY_VALUE_TRUE = "1";
